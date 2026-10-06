@@ -3055,6 +3055,356 @@ html:has(body.about-page) {
    HOMEPAGE — CRA UNIVERSITY REFERENCE THEME
 ========================================================= */
 
+/* SERVICES AND CONTACT REFERENCE PAGES */
+.reference-page-hero {
+    min-height: 356px;
+    padding: 150px 0 70px;
+}
+
+.reference-page-hero h1 {
+    font-size: clamp(48px, 6vw, 64px);
+    letter-spacing: -1px;
+}
+
+.services-page .service-benefits {
+    padding: 0 0 76px;
+    background: #1a1a1a;
+}
+
+.service-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.service-benefit-card {
+    min-height: 230px;
+    padding: 35px 30px;
+    border-radius: 4px;
+    background: #202020;
+    text-align: center;
+}
+
+.service-benefit-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 25px;
+    place-items: center;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.service-benefit-card h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.service-benefit-card p {
+    margin: 0;
+    color: #c2c2c2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.service-pricing {
+    padding: 72px 0 88px;
+    background: #202020;
+}
+
+.service-section-title {
+    margin: 0 0 38px;
+    color: #ffffff;
+    font-size: clamp(42px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    text-align: center;
+}
+
+.service-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 30px;
+    border: 1px solid #363636;
+    border-radius: 4px;
+    background: #1a1a1a;
+}
+
+.pricing-card-featured {
+    border-color: #e65616;
+}
+
+.pricing-name {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pricing-price {
+    margin: 0 0 25px;
+    color: #e65616;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.pricing-feature-list {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 20px;
+    padding: 0;
+    color: #dedede;
+    font-size: 14px;
+    line-height: 1.55;
+    list-style: none;
+}
+
+.pricing-feature-list li::before {
+    margin-right: 10px;
+    color: #e65616;
+    content: "✓";
+    font-weight: 700;
+}
+
+.pricing-feature-list li span {
+    display: block;
+    margin: 4px 0 0 22px;
+    color: #9d9d9d;
+    font-size: 12px;
+}
+
+.pricing-feature-muted {
+    color: #777777;
+}
+
+.pricing-feature-muted li::before {
+    color: #777777;
+}
+
+.pricing-note {
+    margin: 0 0 20px;
+    color: #a7a7a7;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pricing-button {
+    display: grid;
+    min-height: 44px;
+    margin-top: auto;
+    place-items: center;
+    border-radius: 3px;
+    background: #e65616;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.25s ease;
+}
+
+.pricing-button:hover {
+    background: #c74611;
+}
+
+.service-callout {
+    padding: 80px 0;
+    background: #1a1a1a;
+    text-align: center;
+}
+
+.service-callout-content {
+    max-width: 780px;
+}
+
+.service-callout h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.service-callout p {
+    margin: 0 auto;
+    color: #bcbcbc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.service-callout .reference-button {
+    margin-top: 24px;
+}
+
+.contact-page .contact-reference {
+    padding: 0 0 34px;
+    background: #1a1a1a;
+}
+
+.contact-reference-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.contact-reference-card {
+    display: flex;
+    min-height: 240px;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 26px 28px;
+    border-radius: 4px;
+    background: #202020;
+    text-align: center;
+}
+
+.contact-reference-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    place-items: center;
+    color: #ffffff;
+}
+
+.contact-reference-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.contact-reference-card h2 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.contact-reference-card p {
+    margin: 0 0 16px;
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.contact-reference-card a {
+    display: grid;
+    min-width: 112px;
+    min-height: 40px;
+    margin-top: auto;
+    padding: 0 18px;
+    place-items: center;
+    border-radius: 3px;
+    background: #626e7d;
+    color: #ffffff;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.contact-reference-card a:hover {
+    background: #e65616;
+}
+
+.contact-event {
+    padding: 54px 0 76px;
+    background: #1a1a1a;
+}
+
+.contact-event-content {
+    max-width: 920px;
+    text-align: center;
+}
+
+.contact-event-label {
+    display: inline-block;
+    margin: 0 0 16px;
+    color: #e65616;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contact-event h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1.4px;
+    line-height: 1.15;
+}
+
+.contact-event-content > p:last-child {
+    margin: 0 auto;
+    color: #bcbcbc;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.contact-event strong {
+    color: #ffffff;
+}
+
+@media (max-width: 850px) {
+    .reference-page-hero {
+        min-height: 356px;
+        padding: 150px 0 70px;
+    }
+
+    .service-benefit-grid,
+    .service-pricing-grid,
+    .contact-reference-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-benefit-card {
+        min-height: 230px;
+    }
+
+    .contact-reference-grid {
+        gap: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .reference-page-hero {
+        min-height: 356px;
+        padding: 150px 0 70px;
+    }
+
+    .services-page .service-benefits {
+        padding-bottom: 55px;
+    }
+
+    .service-pricing {
+        padding: 60px 0;
+    }
+
+    .pricing-card {
+        padding: 30px 24px;
+    }
+
+    .service-callout,
+    .contact-event {
+        padding: 62px 0;
+    }
+}
+
 body.home {
     --primary: #e65616;
     --primary-dark: #c74611;
