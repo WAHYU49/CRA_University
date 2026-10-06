@@ -253,15 +253,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navLinks.forEach((link) => {
 
-            link.classList.remove("active");
-
             const href = link.getAttribute("href");
 
-            if (href === `#${currentSection}`) {
+            if (!href || !href.startsWith("#")) return;
 
-                link.classList.add("active");
-
-            }
+            link.classList.toggle("active", href === `#${currentSection}`);
 
         });
 
@@ -387,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
             current = Math.floor(target * easeOut);
 
             element.textContent =
-                current.toLocaleString("id-ID");
+                current.toLocaleString("en-US");
 
 
             if (progress < 1) {
@@ -397,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
 
                 element.textContent =
-                    target.toLocaleString("id-ID");
+                    target.toLocaleString("en-US");
 
             }
 
@@ -453,33 +449,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
+            const formData = new FormData(contactForm);
+            const name = String(formData.get("name") || "").trim();
+            const email = String(formData.get("email") || "").trim();
+            const phone = String(formData.get("phone") || "").trim();
+            const message = String(formData.get("message") || "").trim();
+            const whatsappMessage = [
+                "Halo CRA University, saya ingin bertanya tentang program.",
+                `Nama: ${name}`,
+                `Email: ${email}`,
+                phone ? `Nomor telepon: ${phone}` : "",
+                `Pesan: ${message}`
+            ].filter(Boolean).join("\n");
 
-            const name =
-                document.getElementById("name")?.value.trim();
-
-            const email =
-                document.getElementById("email")?.value.trim();
-
-            const message =
-                document.getElementById("message")?.value.trim();
-
-
-            if (!name || !email || !message) {
-
-                alert(
-                    "Silakan lengkapi semua data terlebih dahulu."
-                );
-
-                return;
-
-            }
-
-
-            alert(
-                `Terima kasih, ${name}!\n\nPesan Anda berhasil dikirim.`
+            window.open(
+                `https://wa.me/6285755976016?text=${encodeURIComponent(whatsappMessage)}`,
+                "_blank",
+                "noopener,noreferrer"
             );
-
-
             contactForm.reset();
 
         });
@@ -543,3 +530,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+const carousel = document.querySelector("[data-hero-carousel]");
+    if (carousel) {
+        const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let activeIndex = 0;
+        let timer;
+        let touchStartX = 0;
+
+        const showSlide = (index) => {
+            activeIndex = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("is-active", i === activeIndex);
+                slide.setAttribute("aria-hidden", String(i !== activeIndex));
+            });
+        };
+        const stopAutoPlay = () => window.clearInterval(timer);
+        const startAutoPlay = () => {
+            stopAutoPlay();
+            if (!prefersReducedMotion && slides.length > 1) {
+                timer = window.setInterval(() => showSlide(activeIndex + 1), 8000);
+            }
+        };
+
+
+        carousel.addEventListener("touchstart", (event) => {
+            touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+        carousel.addEventListener("touchend", (event) => {
+            const distance = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(distance) < 45) return;
+            showSlide(activeIndex + (distance < 0 ? 1 : -1));
+            startAutoPlay();
+        }, { passive: true });
+
+        showSlide(0);
+        startAutoPlay();
+    }
